@@ -5,4 +5,4 @@ Hypergeometric tests with Holm-Bonferroni corrected p-values
 Default algorithm, weight01, used along with the Fisher exact test.
 
 # Differential_expression_analysis
-Utilizing DEseq2 to obtain genes differentially expressed between reproductive modes.
+Utilizing DEseq2 to obtain genes differentially expressed between obligate parthenogenetic reproductive modes.
