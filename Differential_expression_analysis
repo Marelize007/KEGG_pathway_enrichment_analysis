@@ -7,7 +7,7 @@ sample_matrix <- DESeqDataSetFromMatrix(countData = count_matrix,
                                          colData = sample_file,
                                          design = ~ Condition)
 
-sample_matrix$Stage <- relevel(sample_matrix$Stage, ref = "WT")
+sample_matrix$Mode <- relevel(sample_matrix$Mode, ref = "Early_resting_egg")
 
 sample_matrix_2 <- DESeq(sample_matrix)
 
@@ -19,10 +19,10 @@ sampleDists <- dist(t(assay(rlog)))
 
 resultsNames(sample_matrix_2)
 de <- results(object = sample_matrix_2,
-              name="Condition_WT_vs_EMS")
+              name="Condition_Early_resting_egg_vs_Early_subitaneous_egg")
 
 de_shrink <- lfcShrink(dds = sample_matrix_2,
-                       coef="Condition_WT_vs_EMS",
+                       coef="Condition_Early_resting_egg_vs_Early_subitaneous_egg",
                        type="apeglm")
 
 head(de)
